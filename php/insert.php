@@ -10,25 +10,33 @@
         $filename = $_FILES['image']['name'];
         $filetempname = $_FILES['image']['tmp_name'];
         $filenewname = uniqid(true).$filename;
-        //UPLOADING IMAGE
-        $filedestination = "./assets/img/" . $filenewname ;
-        $uploading = move_uploaded_file($filetempname , $filedestination);
 
-        $result2 = $obj->insertdata('users',$name,$email,$location,$filenewname); // SENDING DYNAMIC PARAMETERS
-        
-        if($result2 == 1) { //CONCLUDING THE RESULT
-            ?>
-            <script>
-              window.open('./index.php',"_self")
-            </script>
-          <?php
+        $fileUploadResult = $obj->uploadFile($filenewname,$filetempname); // UPLOADING FILE
+
+        if($fileUploadResult == 1) {
+          $result2 = $obj->insertdata('users',$name,$email,$location,$filenewname); // SENDING DYNAMIC PARAMETERS
+          
+          if($result2 == 1) { //CONCLUDING THE RESULT
+              ?>
+              <script>
+                window.open('./index.php',"_self")
+              </script>
+            <?php
+          }else {
+              ?>
+              <script>
+                  alert("Error Occured!");
+                window.open('./index.php',"_self")
+              </script>
+            <?php
+          }
         }else {
             ?>
-            <script>
-                alert("Error Occured!");
-              window.open('./index.php',"_self")
-            </script>
-          <?php
+              <script>
+                  alert("Error Occured While Uploading File!");
+                window.open('./index.php',"_self")
+              </script>
+            <?php
         }
     }
 ?>

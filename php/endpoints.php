@@ -70,5 +70,13 @@
         public function filterString($data) {
             return htmlentities(mysqli_real_escape_string($this->connect(), $data));
         }
+
+        //FOR UPLOADING FILES
+        public function uploadFile($filenewname,$filetempname) {
+            //UPLOADING IMAGE
+            $filedestination = "./assets/img/" . $filenewname ;
+            $uploading = move_uploaded_file($filetempname , $filedestination);
+            return $uploading;
+        }
     }
 ?>
