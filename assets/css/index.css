@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body,
+html {
+  overflow: hidden;
+  background: coral;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .wrapper {
+  width: 90%;
+  background: coral;
+  overflow: hidden;
+  max-height: 90vh;
+  overflow: hidden;
+  border-radius: 5px;
+  -webkit-box-shadow: -3px -3px 10px 0px #ff946d, 3px 3px 10px 0px #ff6026;
+          box-shadow: -3px -3px 10px 0px #ff946d, 3px 3px 10px 0px #ff6026;
+}
+
+.container .wrapper .header {
+  background: #ff632b;
+  padding: 10px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .wrapper .header .left .title span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f1f1f1;
+  pointer-events: none;
+}
+
+.container .wrapper .header .right .icon i {
+  font-size: 20px;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+.container .wrapper .header .right .icon i:active {
+  color: grey;
+}
+
+.container .wrapper .body table {
+  color: #333333;
+}
+
+i {
+  font-size: 20px;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+i:active {
+  color: grey;
+}
+
+img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  background: grey;
+}
+/*# sourceMappingURL=index.css.map */
